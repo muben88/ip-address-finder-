@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap') 
+    
+$dark_gray: hsl(0, 0%, 17%)
+$gray: hsl(0, 0%, 59%)
+
+* 
+    box-sizing: border-box
+    margin: 0
+    padding: 0   
+
+body 
+    font-family: 'Rubik'  
+    font-size: 18px  
+    
+.container,
+.info-card,
+.input-container
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    text-align: center
+
+.container
+    width: 100%
+
+.input-container
+    width: 100%
+    padding: 2rem 2rem 13rem 2rem
+    background-image: url(./components/assets/images/pattern-bg.png)
+    h1 
+        color: white
+        margin-bottom: 1rem
+    div 
+        position: relative
+        width: 100%
+    input
+        width: 100%
+        padding: 1.2rem 0
+        border-radius: .7rem
+        border-style: none
+        text-indent: 1rem
+        font-family: 'Rubik'
+        font-size: 1.2rem
+    input:hover
+        cursor: pointer
+    button
+        width: 5rem
+        height: 100%
+        position: absolute
+        top: 0
+        right: 0
+        background-color: black
+        border-radius: 0 .7rem .7rem 0
+        border-style: none    
+    button:hover
+        cursor: pointer
+        opacity: .8
+        transition: .2s ease-in
+
+.info-card 
+    position: relative
+    top: -11rem
+    width: 88%
+    padding: 1rem
+    background-color: #fff
+    border-radius: 1rem 
+    z-index:500
+
+.info-card-title 
+    color: $gray
+    font-size: 1rem
+    font-weight: 700
+    margin: 1.2rem 0 .5rem 0
+
+.info-card-text
+    font-weight: 700
+    font-size: 1.5rem
+    margin: 0
+    word-wrap: break-word
+
+// Map Section    
+.map
+    width: 100%
+    height: 100vh
+    position: absolute
+    bottom: -22rem
+
+
+.leaflet-container 
+    height: 100%
+    width: 100%
+
+.alert
+    color: white
+    font-weight: 700
+    background-color: #ff6363
+    width: 85% !important
+    text-align: center
+    border-radius: .5rem
+    margin: .5rem 0
+
+// Spinner set
+.lds-roller 
+  display: inline-block
+  position: relative
+  width: 10rem
+  height: 10rem
+
+.lds-roller div 
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+  transform-origin: 40px 40px
+
+.lds-roller div:after 
+  content: " "
+  display: block
+  position: absolute
+  width: 7px
+  height: 7px
+  border-radius: 50%
+  background: $gray
+  margin: -4px 0 0 -4px
+
+.lds-roller div:nth-child(1) 
+  animation-delay: -0.036s
+
+.lds-roller div:nth-child(1):after 
+  top: 63px
+  left: 63px
+
+.lds-roller div:nth-child(2) 
+  animation-delay: -0.072s
+
+.lds-roller div:nth-child(2):after 
+  top: 68px
+  left: 56px
+
+.lds-roller div:nth-child(3) 
+  animation-delay: -0.108s
+
+.lds-roller div:nth-child(3):after 
+  top: 71px
+  left: 48px
+
+.lds-roller div:nth-child(4) 
+  animation-delay: -0.144s
+
+.lds-roller div:nth-child(4):after 
+  top: 72px
+  left: 40px
+
+.lds-roller div:nth-child(5) 
+  animation-delay: -0.18s
+
+.lds-roller div:nth-child(5):after 
+  top: 71px
+  left: 32px
+
+.lds-roller div:nth-child(6) 
+  animation-delay: -0.216s
+
+.lds-roller div:nth-child(6):after 
+  top: 68px
+  left: 24px
+
+.lds-roller div:nth-child(7) 
+  animation-delay: -0.252s
+
+.lds-roller div:nth-child(7):after 
+  top: 63px
+  left: 17px
+
+.lds-roller div:nth-child(8) 
+  animation-delay: -0.288s
+
+.lds-roller div:nth-child(8):after 
+  top: 56px
+  left: 12px
+
+@keyframes lds-roller 
+  0% 
+    transform: rotate(0deg)
+  
+  100% 
+    transform: rotate(360deg)
+// Spinner set end
+
+
+
+@media (min-width:750px)
+    .input-container
+        padding-bottom: 8rem 
+        div
+            width: 30rem
+    
+    .info-card
+        padding: 2.5rem 1rem
+        display: grid
+        grid-template-columns: repeat(4, 25%)
+        align-items: normal
+        top: -6rem
+        div
+            border-right: 1px solid $gray
+            padding: 0 1rem
+            text-align: start
+        div:last-child
+            border: none
+
+    .info-card-title 
+        margin: 0 0 1rem 0
+
+    .map
+        bottom: -17rem
+    .alert
+      width: 25rem !important

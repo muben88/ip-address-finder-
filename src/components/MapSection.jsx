@@ -6,7 +6,7 @@ import Spinner from "./spinner";
 function MapSection() {
   const { info, loading } = useContext(IpGeolocationContext);
 
-  const position = [info.lat, info.lon];
+  const position = [parseInt(info.latitude), parseInt(info.longitude)];
 
   if (!loading) {
     return (

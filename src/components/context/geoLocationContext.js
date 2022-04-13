@@ -2,8 +2,6 @@ import { createContext, useState } from "react";
 
 const IpGeolocationContext = createContext();
 
-const baseUrl = "http://ip-api.com/json/";
-
 export const IpGeolocationProvider = ({ children }) => {
   const [info, setInfo] = useState({});
   const [initialIp, setInitialIp] = useState("");
@@ -11,9 +9,11 @@ export const IpGeolocationProvider = ({ children }) => {
 
   const getIpInfo = async (text) => {
     setLoading(true);
-    const res = await fetch(baseUrl + text);
-    const data = await res.json();
-    if (data.status === "success") {
+    const res = await fetch(
+      `https://api.ipgeolocation.io/ipgeo?apiKey=dc823969e33045dba3d1eb5953bbf963&ip=${text}`
+    );
+    if (res.status === 200) {
+      const data = await res.json();
       setInfo(data);
       setLoading(false);
     } else {
